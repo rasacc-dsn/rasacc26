@@ -4,32 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Call for Papers - RASACC 2026</title>
+
+    <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Same site style (accent + global links) -->
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --rasacc-accent: #b45309; /* amber-700-ish */
+          --rasacc-accent-dark: #78350f; /* amber-900-ish */
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        a {
+          color: var(--rasacc-accent);
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+        a:hover {
+          color: var(--rasacc-accent-dark);
+        }
+      }
+    </style>
+    <!-- Play CDN supports Tailwind-authored CSS in style[type="text/tailwindcss"]. [web:18] -->
   </head>
-  <body class="bg-gray-50 text-gray-800 font-sans">
+
+  <body class="bg-stone-50 text-stone-800 font-sans">
     <!-- Header -->
-    <header class="bg-white shadow sticky top-0 z-50">
+    <header
+      class="bg-white/90 backdrop-blur border-b border-stone-200 sticky top-0 z-50"
+    >
       <div
-        class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center"
+        class="max-w-7xl mx-auto px-4 py-5 flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center"
       >
-        <h1 class="text-2xl font-bold text-gray-900">RASACC 2026</h1>
-        <nav class="space-x-4 text-blue-600 font-medium">
-          <a href="index.html" class="hover:underline">Home</a>
-          <a href="cfp.html" class="hover:underline">Call for Papers</a>
-          <a href="submission.html" class="hover:underline">Submission</a>
-          <a href="committee.html" class="hover:underline">Committee</a>
+        <h1 class="text-2xl font-extrabold tracking-tight text-stone-900">
+          RASACC 2026
+        </h1>
+
+        <nav class="flex flex-wrap gap-x-5 gap-y-2 font-medium">
+          <a href="index.html" class="hover:no-underline">Home</a>
+          <a href="cfp.html" class="hover:no-underline">Call for Papers</a>
+          <a href="submission.html" class="hover:no-underline">Submission</a>
+          <a href="committee.html" class="hover:no-underline">Committee</a>
         </nav>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-5xl mx-auto px-4 py-12 space-y-12">
-      <!-- Important Dates -->
-      <section>
-        <h2 class="text-2xl font-semibold text-gray-900 mb-4">
-          Important Dates
+    <!-- Hero (simple) -->
+    <section class="border-b border-stone-200 bg-white">
+      <div class="max-w-5xl mx-auto px-4 py-10">
+        <div
+          class="inline-flex items-center gap-2 rounded-full bg-stone-100 border border-stone-200 px-4 py-2 text-sm text-stone-700"
+        >
+          <span class="font-semibold tracking-wide">Call for Papers</span>
+          <span class="opacity-70">•</span>
+          <span class="opacity-90">RASACC 2026</span>
+        </div>
+
+        <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-stone-900">
+          Call for Papers
         </h2>
-        <ul class="list-disc pl-6 text-lg space-y-2">
+        <p class="mt-3 text-lg text-stone-700 max-w-3xl">
+          RASACC welcomes (i) theoretical, (ii) modeling, (iii) evaluation, (iv)
+          tooling contributions, and (v) experience reports and case studies.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 py-12 space-y-10">
+      <!-- Important Dates -->
+      <section class="bg-white rounded-2xl border border-stone-200 p-6 md:p-8">
+        <h3 class="text-2xl font-bold text-stone-900 mb-4">Important dates</h3>
+
+        <ul class="list-disc pl-6 text-lg space-y-2 text-stone-700">
           <li><strong>TBD:</strong> Submission of papers</li>
           <li>
             <strong>TBD:</strong> Notification of paper acceptance/rejection
@@ -39,36 +89,47 @@
         </ul>
       </section>
 
-      <!-- Call for Papers -->
-      <section>
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">Call for Papers</h2>
-        <p class="text-lg mb-6">
-          RASACC workshop welcomes (i) theoretical, (ii) modeling, (iii)
-          evaluation, (iv) tooling contributions, and (v) experience re- ports
-          and case studies on the following topics:
-        </p>
+      <!-- Topics -->
+      <section class="space-y-5">
+        <div>
+          <h3 class="text-2xl font-bold text-stone-900">Topics of interest</h3>
+          <p class="mt-2 text-lg text-stone-700">
+            The workshop seeks contributions on (but not limited to) the
+            following topics.
+          </p>
+        </div>
 
-        <div class="space-y-6 text-lg">
-          <!-- AI for Healthcare -->
-          <div>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">
+        <div class="grid grid-cols-1 gap-6">
+          <!-- NOTE: kept your existing topic text verbatim; just restyled. -->
+
+          <article
+            class="bg-white rounded-2xl border border-stone-200 p-6 md:p-8"
+          >
+            <h4 class="text-xl font-bold text-stone-900">
               Artificial Intelligence for Healthcare
-            </h3>
-            <ul class="list-disc pl-6 space-y-1">
+            </h4>
+            <div
+              class="mt-3 h-1 w-16 rounded bg-[color:var(--rasacc-accent)]"
+            ></div>
+            <ul class="mt-4 list-disc pl-6 space-y-1 text-lg text-stone-700">
               <li>Trustworthy and explainable AI in clinical settings</li>
               <li>Machine learning in personalized medicine</li>
               <li>Predictive modeling and diagnostics</li>
               <li>Natural Language Processing for clinical data</li>
               <li>Ethics in AI-driven healthcare</li>
             </ul>
-          </div>
+          </article>
 
-          <!-- Security -->
-          <div>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">
+          <article
+            class="bg-white rounded-2xl border border-stone-200 p-6 md:p-8"
+          >
+            <h4 class="text-xl font-bold text-stone-900">
               Security, Privacy, and Compliance
-            </h3>
-            <ul class="list-disc pl-6 space-y-1">
+            </h4>
+            <div
+              class="mt-3 h-1 w-16 rounded bg-[color:var(--rasacc-accent)]"
+            ></div>
+            <ul class="mt-4 list-disc pl-6 space-y-1 text-lg text-stone-700">
               <li>Adversarial machine learning in digital health</li>
               <li>Cybersecurity for healthcare systems and infrastructures</li>
               <li>Secure and interoperable health data sharing</li>
@@ -76,67 +137,96 @@
               <li>Risk modeling and threat assessment in digital health</li>
               <li>Compliance with regulatory standards</li>
             </ul>
-          </div>
+          </article>
 
-          <!-- Connected Health -->
-          <div>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">
+          <article
+            class="bg-white rounded-2xl border border-stone-200 p-6 md:p-8"
+          >
+            <h4 class="text-xl font-bold text-stone-900">
               Connected Health and Wearable Systems
-            </h3>
-            <ul class="list-disc pl-6 space-y-1">
+            </h4>
+            <div
+              class="mt-3 h-1 w-16 rounded bg-[color:var(--rasacc-accent)]"
+            ></div>
+            <ul class="mt-4 list-disc pl-6 space-y-1 text-lg text-stone-700">
               <li>Smart medical and implantable devices</li>
               <li>Internet of Medical Things (IoMT) architectures</li>
               <li>Mobile health (mHealth) applications</li>
               <li>Remote patient monitoring and bio-signal analysis</li>
             </ul>
-          </div>
+          </article>
 
-          <!-- Personal Health -->
-          <div>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">
+          <article
+            class="bg-white rounded-2xl border border-stone-200 p-6 md:p-8"
+          >
+            <h4 class="text-xl font-bold text-stone-900">
               Personal and Digital Health
-            </h3>
-            <ul class="list-disc pl-6 space-y-1">
+            </h4>
+            <div
+              class="mt-3 h-1 w-16 rounded bg-[color:var(--rasacc-accent)]"
+            ></div>
+            <ul class="mt-4 list-disc pl-6 space-y-1 text-lg text-stone-700">
               <li>Telemedicine platforms and hybrid care models</li>
               <li>Human-centered design in clinical systems</li>
               <li>Assistive technologies for aging and disability</li>
               <li>Patient-facing apps for behavior change and adherence</li>
             </ul>
-          </div>
+          </article>
 
-          <!-- Healthcare Systems -->
-          <div>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">
+          <article
+            class="bg-white rounded-2xl border border-stone-200 p-6 md:p-8"
+          >
+            <h4 class="text-xl font-bold text-stone-900">
               Healthcare Systems and Architectures
-            </h3>
-            <ul class="list-disc pl-6 space-y-1">
+            </h4>
+            <div
+              class="mt-3 h-1 w-16 rounded bg-[color:var(--rasacc-accent)]"
+            ></div>
+            <ul class="mt-4 list-disc pl-6 space-y-1 text-lg text-stone-700">
               <li>Clinical decision support systems (CDSS)</li>
               <li>Emergency and crisis-response systems</li>
               <li>Blockchain applications for data integrity</li>
               <li>Medical cyber-physical and real-time systems</li>
             </ul>
-          </div>
+          </article>
 
-          <!-- Operations -->
-          <div>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">
+          <article
+            class="bg-white rounded-2xl border border-stone-200 p-6 md:p-8"
+          >
+            <h4 class="text-xl font-bold text-stone-900">
               Process Optimization and Operational Intelligence
-            </h3>
-            <ul class="list-disc pl-6 space-y-1">
+            </h4>
+            <div
+              class="mt-3 h-1 w-16 rounded bg-[color:var(--rasacc-accent)]"
+            ></div>
+            <ul class="mt-4 list-disc pl-6 space-y-1 text-lg text-stone-700">
               <li>Resource scheduling and hospital logistics</li>
               <li>Optimization of care pathways and service delivery</li>
               <li>Real-time workflow monitoring and prediction</li>
               <li>Data-driven modeling for operational efficiency</li>
             </ul>
-          </div>
+          </article>
         </div>
+      </section>
+
+      <!-- Optional CTA -->
+      <section
+        class="rounded-2xl border border-stone-200 p-6 md:p-8 bg-gradient-to-r from-white to-stone-50"
+      >
+        <h3 class="text-xl font-bold text-stone-900">Ready to submit?</h3>
+        <p class="mt-2 text-stone-700">
+          See the <a href="submission.html" class="font-semibold">Submission</a>
+          page for instructions and the portal link.
+        </p>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t py-6">
-      <div class="text-center text-sm text-gray-600">
-        &copy; RASACC 2026. All rights reserved.
+    <footer class="border-t border-stone-200 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-4 py-8 text-center text-sm text-stone-600"
+      >
+        &copy; 2026 RASACC 2026. All rights reserved.
       </div>
     </footer>
   </body>
